@@ -1,21 +1,21 @@
 *{
     margin:0px;
     padding:0px;
+    font-family:"National Park", sans-serif;
 }
 
 /* Navbar area css */
 body{
-    background-color:rgb(15, 14, 14);
+    background-color:rgba(15, 14, 14, 0.931);
     color:white;
 }
 
-header{
-    background-color:rgb(48, 43, 43)
+header{   
+    padding:30px 150px 20px 150px;
 }
 
-.header{
-    padding:30px 150px 20px 150px;
-    
+.header{ 
+    background-color:rgb(48, 43, 43);
 }
 
 nav{
@@ -28,25 +28,110 @@ nav{
     display:flex;
     justify-content:right;
     align-items:center;
+    flex-wrap: wrap;
+    gap:50px;
+    list-style-type:none;
+    transition:max-height 0.3s ease-out;
 }
 
-li{
-    margin-right:20px;
-    list-style-type: none;
+.toggle{
+        display: none;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
 }
 
-li:nth-child(odd){
-    margin-right:50px;
+@media (max-width:780px){
+    .toggle{
+        display:block;
+    }
+
+    .list-div {
+        position: relative; /* anchor for absolute list */
+      }
+    
+      .list {
+        position: absolute;
+        top: 50px; /* adjust based on navbar height */
+        right: 0;
+        background-color: rgb(48, 43, 43);
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        z-index: 10;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+    
+      .list.active {
+        display: flex;
+      }
+    
+      .list li {
+        padding: 15px;
+        border-bottom: 1px solid #555;
+        text-align: center;
+        display: block;
+      }
+    
+      .list li:last-child {
+        border-bottom: none;
+      }
 }
 
-li:nth-child(2){
-    margin-right:50px;
-}
 
 
 /* Avatar to Button Area  */
 .Avatar-area{
-    padding:0px 150px 0px 150px;
+    padding:50px 150px 0px 150px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+    height:auto;
+}
+
+.avatar{
+    width:150px;
+    height:auto;
+    border-radius:50%;
+}
+
+.contentarea{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.content{
+    text-align:center;
+    padding-top:15px;
+    padding-bottom:15px; 
+    font-size:xx-large;
+}
+
+.ex{
+    background: linear-gradient(90deg, #ff6a88, #ff99ac);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hi{
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.sub-content{
+    text-align:center;
+    margin:0px 150px 0px 150px;
+    width:325px;
+    margin-bottom:15px;
+    font-family:"National Park", sans-serif;
 }
 
 /* Tech Stack Area  */

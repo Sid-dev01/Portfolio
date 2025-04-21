@@ -8,16 +8,21 @@
     <link rel="stylesheet" href="./style.css" />
     <!-- Js link  -->
     <script src="script.js" defer></script>
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- Navbar -->
     <header class="header">
       <nav>
-        <div>
+        <div class="logo">
           <p>Logo</p>
         </div>
         <div class="list-div">
-          <ul class ="list">
+          <button class="toggle" id="toggle">&#9776;</button>
+          <ul class ="list" id="list-links">
             <li>Home</li>
             <li>About me</li>
             <li>Projects</li>
@@ -30,23 +35,24 @@
     <!-- Avatar to button area  -->
     <div class="Avatar-area">
       <!-- Avatar -->
-      <div>
-        <img src="" alt="" />
+      <div >
+        <img class="avatar" src="./Assets/myAvatar.png" alt="my-Avatar" />
       </div>
 
       <!-- Content Area -->
-      <div>
-        <div>
-          <p>Hi! I am Siddhartha.</p>
+      <div class="contentarea">
+        <div class="content">
+          <h2>Hi<span class="ex">!</span></h2>
+          <h2>I am <span class="hi">Siddhartha</span>.</h2>
         </div>
-        <div>
-          <p>A little info....</p>
+        <div class="sub-content">
+          <p>I'm a passionate full stack developer focused on building clean, responsive web apps. I enjoy working with HTML, CSS, JavaScript, and integrating APIs to create interactive user experiences. Always learning, always coding.</p>
         </div>
       </div>
 
       <!-- Button Area -->
 
-      <div>
+      <div class="buttons">
         <button>Get in touch</button>
         <button>Download Resume</button>
       </div>
