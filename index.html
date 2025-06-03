@@ -12,34 +12,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
   <body>
     <!-- Navbar -->
     <header class="header">
       <nav>
         <div class="logo">
-          <p>Logo</p>
+          <p>SG</p>
         </div>
         <div class="list-div">
           <button class="toggle" id="toggle">&#9776;</button>
-          <ul class ="list" id="list-links">
+          <ul class="list" id="list-links">
             <li>Home</li>
-            <li>About me</li>
+            <li>About</li>
             <li>Projects</li>
-            <li>Contact me</li>
+            <li>Contact</li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <!-- Avatar to button area  -->
-    <div class="Avatar-area">
-      <!-- Avatar -->
-      <div >
+    <!-- Home Section -->
+    <section id="home" class="Avatar-area">
+      <div>
         <img class="avatar" src="./Assets/myAvatar.png" alt="my-Avatar" />
       </div>
 
-      <!-- Content Area -->
       <div class="contentarea">
         <div class="content">
           <h2>Hi<span class="ex">!</span></h2>
@@ -50,46 +50,62 @@
         </div>
       </div>
 
-      <!-- Button Area -->
-
       <div class="buttons">
-        <button>Get in touch</button>
-        <button>Download Resume</button>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in touch</button>
+        <button onclick="window.open('path-to-your-resume.pdf', '_blank')">Download Resume</button>
       </div>
-    </div>
+    </section>
 
-    <!-- Tech Stack Area  -->
-    <div class="tech-stack-area">
+    <!-- About Section -->
+    <section id="about" class="tech-stack-area">
       <div>
         <p>Tech Stack</p>
       </div>
 
-      <!-- Tech Logos -->
-      <div>
-        <div>
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-        </div>
+      <div class="tech-logos">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
       </div>
-    </div>
+    </section>
 
-    <!-- Projects  -->
-
-    <div class="project-area">
+    <!-- Projects Section -->
+    <section id="projects" class="project-area">
       <div>
         <h3>Projects</h3>
       </div>
 
-      <!-- Project Card -->
-      <div></div>
-    </div>
+      <div class="project-cards">
+        <!-- Project Card 1 -->
+        <div class="project-card">
+          <img src="path-to-project-image.jpg" alt="Project 1">
+          <h4>Project Title</h4>
+          <p>Project description goes here. Brief overview of what the project does and technologies used.</p>
+          <div class="project-links">
+            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
 
-    <!-- Footer  -->
+        <!-- Add more project cards as needed -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-area">
+      <h3>Get In Touch</h3>
+      <div class="contact-links">
+        <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-      <p>Footer Area....</p>
+      <p>&copy; 2024 Siddhartha Gautam. All rights reserved.</p>
     </footer>
   </body>
 </html>
