@@ -317,12 +317,20 @@ nav{
   height: 60px;
   object-fit: contain;
   transition: transform 0.3s ease;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* Special handling for Express.js logo in dark mode */
+[data-theme="dark"] .tech-logos img[alt="Express.js"] {
+  filter: invert(1);
 }
 
 .tech-logos img:hover {
   transform: translateY(-5px);
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 6px var(--shadow-color);
 }
-
 
 /* Project Area  */
 .project-area{
