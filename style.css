@@ -303,20 +303,21 @@ nav{
   color: var(--text-color);
 }
 
-.tech-stack-area .tech-logos {
+.tech-logos {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem;
 }
 
 .tech-logos img {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   padding: 8px;
   border-radius: 8px;
 }
@@ -330,6 +331,17 @@ nav{
   transform: translateY(-5px);
   background-color: var(--card-bg);
   box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+@media (max-width: 768px) {
+  .tech-logos {
+    gap: 1.5rem;
+  }
+  
+  .tech-logos img {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 /* Project Area  */
