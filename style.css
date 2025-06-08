@@ -512,3 +512,62 @@ nav{
     color: white;
     border-top: none;
 }
+
+/* Project Visuals Specific Styles */
+.project-card:nth-child(1) .project-visual {
+    background: linear-gradient(135deg, #E50914, #831010);
+}
+
+.project-card:nth-child(2) .project-visual {
+    background: linear-gradient(135deg, #00B4DB, #0083B0);
+}
+
+.project-card:nth-child(3) .project-visual {
+    background: linear-gradient(135deg, #3B4371, #F3904F);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:nth-child(3) .project-visual::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+.project-card:nth-child(3) .project-visual i {
+    animation: rocketFloat 2s ease-in-out infinite;
+}
+
+@keyframes rocketFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+}
+
+.project-card:hover .project-visual i {
+    transform: scale(1.1) translateY(-5px);
+    transition: transform 0.3s ease;
+}
