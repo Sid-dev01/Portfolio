@@ -555,19 +555,12 @@ nav{
 }
 
 .project-card:nth-child(3) .project-visual i {
-    animation: rocketFloat 2s ease-in-out infinite;
-}
-
-@keyframes rocketFloat {
-    0%, 100% {
-        transform: translateY(0) rotate(45deg);
-    }
-    50% {
-        transform: translateY(-10px) rotate(45deg);
-    }
-}
-
-.project-card:hover .project-visual i {
-    transform: scale(1.1) translateY(-5px);
+    font-size: 3.5rem;
+    color: #ffffff;
+    transform: rotate(-10deg);
     transition: transform 0.3s ease;
+}
+
+.project-card:nth-child(3):hover .project-visual i {
+    transform: rotate(0deg) scale(1.1);
 }
