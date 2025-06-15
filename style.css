@@ -132,6 +132,19 @@ nav{
   padding: 0.5rem 0;
 }
 
+.list li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.list li a:hover {
+  color: var(--primary-color);
+}
+
 .list li::after {
   content: '';
   position: absolute;
@@ -144,6 +157,14 @@ nav{
 }
 
 .list li:hover::after {
+  width: 100%;
+}
+
+.list li a.active {
+  color: var(--primary-color);
+}
+
+.list li a.active::after {
   width: 100%;
 }
 
