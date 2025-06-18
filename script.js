@@ -92,3 +92,73 @@ function setActiveLink() {
 
 window.addEventListener('scroll', setActiveLink);
 window.addEventListener('load', setActiveLink);
+
+// Carousel functionality
+function scrollCarousel(direction) {
+    const container = document.querySelector('.carousel-track');
+    const cardWidth = 320; // Width of each card including gap
+    const scrollAmount = cardWidth * direction;
+    
+    container.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+// Add keyboard navigation for carousel
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        scrollCarousel(-1);
+    } else if (e.key === 'ArrowRight') {
+        scrollCarousel(1);
+    }
+});
+
+// Add touch/swipe support for carousel
+let touchStartX = 0;
+let touchEndX = 0;
+const carouselTrack = document.querySelector('.carousel-track');
+
+carouselTrack.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+carouselTrack.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swipe left
+            scrollCarousel(1);
+        } else {
+            // Swipe right
+            scrollCarousel(-1);
+        }
+    }
+}
+
+// Add scroll buttons visibility based on scroll position
+const carouselContainer = document.querySelector('.carousel-container');
+const leftBtn = carouselContainer.querySelector('.carousel-btn.left');
+const rightBtn = carouselContainer.querySelector('.carousel-btn.right');
+
+carouselTrack.addEventListener('scroll', () => {
+    // Show/hide left button
+    leftBtn.style.opacity = carouselTrack.scrollLeft > 0 ? '1' : '0.5';
+    
+    // Show/hide right button
+    const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+    rightBtn.style.opacity = carouselTrack.scrollLeft < maxScroll ? '1' : '0.5';
+});
+
+// Initialize button states
+window.addEventListener('load', () => {
+    leftBtn.style.opacity = '0.5';
+    rightBtn.style.opacity = carouselTrack.scrollWidth > carouselTrack.clientWidth ? '1' : '0.5';
+});

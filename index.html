@@ -89,64 +89,67 @@
         <h3>Projects</h3>
       </div>
 
-      <div class="project-cards">
-        <!-- Project Card 1 -->
-        <div class="project-card">
-          <div class="project-visual">
-            <div class="visual-overlay"></div>
-            <i class="fas fa-film"></i>
+      <div class="carousel-container">
+        <button class="carousel-btn left" onclick="scrollCarousel(-1)">&#10094;</button>
+        <div class="carousel-track">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div class="project-visual">
+              <div class="visual-overlay"></div>
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+            <h4>Weather App</h4>
+            <p>A clean weather app that shows real-time weather info by city using OpenWeather API. Built with HTML, CSS, and JavaScript.</p>
+            <div class="project-links">
+              <a href="https://github.com/Sid-dev01/Weather-Application" target="_blank"><i class="fab fa-github"></i> Code</a>
+              <a href="https://sid-dev01.github.io/Weather-Application/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
           </div>
-          <h4>Netflix-HomePage</h4>
-          <p>It is a clone of NETFLIX home page.
-            This mini project is a front-end project which was made using HTML , CSS and Bootstap.</p>
-          <div class="project-links">
-            <a href="https://github.com/Sid-dev01/Netflix-Clone" target="_blank"><i class="fab fa-github"></i> Code</a>
-            <a href="https://sid-dev01.github.io/Netflix-Clone" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-visual">
+              <div class="visual-overlay"></div>
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <h4>Video Streaming App</h4>
+            <p>A simple video streaming platform that serves videos directly from the server. Built with Node.js, Express, MongoDB, and vanilla JavaScript.</p>
+            <div class="project-links">
+              <a href="#https://github.com/Sid-dev01/Video-Streaming-App" target="_blank"><i class="fab fa-github"></i> Code</a>
+              <a href="https://video-streaming-app-1-kz3u.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-visual">
+              <div class="visual-overlay"></div>
+              <i class="fas fa-film"></i>
+            </div>
+            <h4>Netflix-HomePage</h4>
+            <p>It is a clone of NETFLIX home page.
+              This mini project is a front-end project which was made using HTML , CSS and Bootstap.</p>
+            <div class="project-links">
+              <a href="https://github.com/Sid-dev01/Netflix-Clone" target="_blank"><i class="fab fa-github"></i> Code</a>
+              <a href="https://sid-dev01.github.io/Netflix-Clone" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card">
+            <div class="project-visual">
+              <div class="visual-overlay"></div>
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h4>Coming Soon</h4>
+            <p>It is a full-stack clone of Zomato. This project is built using the MERN with features like restaurant listing, filtering, and user authentication.</p>
+            <div class="project-links">
+              <a href="https://github.com/Sid-dev01/Zomato-App" target="_blank"><i class="fab fa-github"></i> Code</a>
+              <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
           </div>
         </div>
-
-        <!-- Project Card 2 -->
-        <div class="project-card">
-          <div class="project-visual">
-            <div class="visual-overlay"></div>
-            <i class="fas fa-cloud-sun"></i>
-          </div>
-          <h4>Weather App</h4>
-          <p>A clean weather app that shows real-time weather info by city using OpenWeather API. Built with HTML, CSS, and JavaScript.</p>
-          <div class="project-links">
-            <a href="https://github.com/Sid-dev01/Weather-Application" target="_blank"><i class="fab fa-github"></i> Code</a>
-            <a href="https://sid-dev01.github.io/Weather-Application/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
-        </div>
-
-        <!-- Project Card 3 -->
-        <div class="project-card">
-          <div class="project-visual">
-            <div class="visual-overlay"></div>
-            <i class="fas fa-play-circle"></i>
-          </div>
-          <h4>Video Streaming App</h4>
-          <p>A simple video streaming platform that serves videos directly from the server. Built with Node.js, Express, MongoDB, and vanilla JavaScript.</p>
-          <div class="project-links">
-            <a href="https://github.com/Sid-dev01/Video-Streaming-App" target="_blank"><i class="fab fa-github"></i> Code</a>
-            <a href="https://video-streaming-app-1-kz3u.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
-        </div>
-
-        <!-- Project 4  -->
-        <div class="project-card">
-          <div class="project-visual">
-            <div class="visual-overlay"></div>
-            <i class="fas fa-play-circle"></i>
-          </div>
-          <h4>Coming Soon</h4>
-          <p>....</p>
-          <div class="project-links">
-            <a href="https://github.com/Sid-dev01/project-name" target="_blank"><i class="fab fa-github"></i> Code</a>
-            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-          </div>
-        </div>
-
+        <button class="carousel-btn right" onclick="scrollCarousel(1)">&#10095;</button>
       </div>
     </section>
 
