@@ -311,58 +311,104 @@ nav{
 }
 
 /* Tech Stack Area  */
-.tech-stack-area{
-    padding:4rem 5%;
+.tech-stack-area {
+    padding: 4rem 5%;
     background-color: var(--section-bg);
     text-align: center;
+    position: relative;
 }
 
 .tech-stack-area > div:first-child p {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    letter-spacing: 1px;
 }
 
 .tech-logos {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-.tech-logos img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  padding: 8px;
-  border-radius: 8px;
+.tech-logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-/* Special handling for Express.js logo in dark mode */
-[data-theme="dark"] .tech-logos img[alt="Express.js"] {
-  filter: invert(1);
+.tech-logo:hover {
+    transform: translateY(-8px) scale(1.08);
+    z-index: 2;
 }
 
-.tech-logos img:hover {
-  transform: translateY(-5px);
-  background-color: var(--card-bg);
-  box-shadow: 0 4px 6px var(--shadow-color);
+.tech-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    padding: 8px;
+    border-radius: 8px;
+    background: var(--card-bg);
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+[data-theme="dark"] .tech-logo img[alt="Express.js"] {
+    filter: invert(1);
+}
+
+.tech-logo:hover img {
+    background-color: var(--primary-color);
+    box-shadow: 0 6px 18px var(--shadow-color);
+    transform: scale(1.08);
+}
+
+.tech-logo::after {
+    content: attr(data-tech);
+    position: absolute;
+    bottom: -2.2rem;
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: opacity 0.2s, transform 0.2s;
+    border: 1px solid var(--border-color);
+    z-index: 10;
+}
+
+.tech-logo:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
 }
 
 @media (max-width: 768px) {
-  .tech-logos {
-    gap: 1.5rem;
-  }
-  
-  .tech-logos img {
-    width: 50px;
-    height: 50px;
-  }
+    .tech-logos {
+        gap: 1.2rem;
+    }
+    .tech-logo img {
+        width: 48px;
+        height: 48px;
+    }
+    .tech-logo::after {
+        font-size: 0.85rem;
+        bottom: -1.8rem;
+    }
 }
 
 /* Project Area  */
