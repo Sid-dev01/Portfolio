@@ -148,17 +148,25 @@ const carouselContainer = document.querySelector('.carousel-container');
 const leftBtn = carouselContainer.querySelector('.carousel-btn.left');
 const rightBtn = carouselContainer.querySelector('.carousel-btn.right');
 
-carouselTrack.addEventListener('scroll', () => {
-    // Show/hide left button
-    leftBtn.style.opacity = carouselTrack.scrollLeft > 0 ? '1' : '0.5';
-    
-    // Show/hide right button
-    const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
-    rightBtn.style.opacity = carouselTrack.scrollLeft < maxScroll ? '1' : '0.5';
-});
+function updateCarouselButtons() {
+    // Hide left button if at start
+    if (carouselTrack.scrollLeft <= 0) {
+        leftBtn.style.opacity = '0';
+        leftBtn.style.pointerEvents = 'none';
+    } else {
+        leftBtn.style.opacity = '1';
+        leftBtn.style.pointerEvents = 'auto';
+    }
+    // Hide right button if at end
+    const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth - 1;
+    if (carouselTrack.scrollLeft >= maxScroll) {
+        rightBtn.style.opacity = '0';
+        rightBtn.style.pointerEvents = 'none';
+    } else {
+        rightBtn.style.opacity = '1';
+        rightBtn.style.pointerEvents = 'auto';
+    }
+}
 
-// Initialize button states
-window.addEventListener('load', () => {
-    leftBtn.style.opacity = '0.5';
-    rightBtn.style.opacity = carouselTrack.scrollWidth > carouselTrack.clientWidth ? '1' : '0.5';
-});
+carouselTrack.addEventListener('scroll', updateCarouselButtons);
+window.addEventListener('load', updateCarouselButtons);
